@@ -8,18 +8,31 @@ Need to have terraform CLI, Gcloud CLI, Git CLI and VS Code IDE (Only if coding)
 ## Steps to execute the TF scripts:
 
 $ gcloud auth login
+
 $ gcloud config list
+
 $ gcloud auth application-default login
+
 $ cd env/test
+
 $ terraform init
+
 $ ls -la
+
 $ terraform fmt
+
 $ terraform validate
+
 $ ls -la
+
 $ terraform validate
+
 $ terraform plan -out test-plan.out
+
 $ terraform apply "test-plan.out"
+
 $ ls -la
+
 $ terraform show
 
 ## Only if you are sure and want to delete the infra.
