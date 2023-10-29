@@ -89,3 +89,9 @@ variable "deletion_protection" {
   type        = bool
   description = "Delete protection prop for the GKE Cluster."
 }
+
+# Terraform commons
+variable "gcp_creds" {
+  type        = string
+  description = "Location for the JSON key for GCP Auth."
+}

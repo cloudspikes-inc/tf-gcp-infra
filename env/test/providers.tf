@@ -1,8 +1,6 @@
-terraform {
-  required_providers {
-    google = {
-      source = "hashicorp/google"
-    }
-  }
-  required_version = ">= 0.13"
+provider "google" {
+  project = "inlaid-ally-373906"
+  region  = "us-central1"
+  # zone    = "<YOUR ZONE>"
+  credentials = var.gcp_creds
 }
