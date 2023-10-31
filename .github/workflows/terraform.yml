@@ -118,11 +118,11 @@ jobs:
 
     - name: Terraform Show
       working-directory: ./env/test
-      if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+      # if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform show
 
     - name: Terraform Delete
       working-directory: ./env/test
-      if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+      # if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
       
