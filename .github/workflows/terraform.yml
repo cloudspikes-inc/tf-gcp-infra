@@ -76,6 +76,7 @@ jobs:
 
     # Add GCP SA JSON data to the pipeline env as a GitHub Actions secret data.
     - name: Setup the GA Secrets for TF Ops.
+      working-directory: ./env/test
       env:
         GCP_SA_JSON: ${{ secrets.GCP_SA_JSON }}
       run: |
@@ -84,6 +85,7 @@ jobs:
         whoami
         echo $GCP_SA_JSON > tf-ops.json
         ls -la
+        cat tf-ops.json
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
