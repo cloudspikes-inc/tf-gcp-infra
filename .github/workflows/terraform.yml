@@ -124,5 +124,5 @@ jobs:
     - name: Terraform Delete
       working-directory: ./env/test
       # if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
-      run: terraform apply -auto-approve -input=false
+      run: terraform destroy -auto-approve -input=false
       
