@@ -86,7 +86,8 @@ jobs:
         echo $GCP_SA_JSON > tf-ops.json
         ls -la
         cat tf-ops.json
-        export GOOGLE_APPLICATION_CREDENTIALS=tf-ops.json
+        # export GOOGLE_APPLICATION_CREDENTIALS=tf-ops.json
+        echo "GOOGLE_APPLICATION_CREDENTIALS=tf-ops.json" >> $GITHUB_ENV
         echo "GOOGLE_APPLICATION_CREDENTIALS --> $GOOGLE_APPLICATION_CREDENTIALS"
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
