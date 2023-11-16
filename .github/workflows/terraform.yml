@@ -86,12 +86,15 @@ jobs:
         echo $GCP_SA_JSON > tf-ops.json
         ls -la
         cat tf-ops.json
+        export GOOGLE_APPLICATION_CREDENTIALS=tf-ops.json
+        echo $GOOGLE_APPLICATION_CREDENTIALS
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       working-directory: ./env/test
       run: |
         ls -la
+        echo $GOOGLE_APPLICATION_CREDENTIALS
         terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format
