@@ -127,4 +127,17 @@ jobs:
     - name: Terraform Delete
       working-directory: ./env/test
       run: terraform destroy -auto-approve -input=false
+
+    - name: Trigger child repo workflow
+      uses: convictional/trigger-workflow-and-wait@v1.6.1
+      with:
+        owner: cloudspikes-inc
+        repo: child-repo-trigger
+        github_token: ${{ secrets.AUTH_TOKEN }}
+        workflow_file_name: blank.yml
+        ref: main
+        wait_interval: 10
+        propagate_failure: true
+        trigger_workflow: true
+        wait_workflow: true
       
